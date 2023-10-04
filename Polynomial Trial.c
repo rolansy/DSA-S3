@@ -5,6 +5,12 @@ struct poly{
     int c;
 }
 
+//Function Declaration
+void readpoly(struct poly p,int n);
+void sortpoly(struct poly p,int n);
+void printpoly(struct poly p,int n);
+void addpoly(struct poly p1,struct poly res,int n1,int n2);
+
 void main(){
     struct poly p1[10],p2[10],res[10];
     int n1, n2, n3;
