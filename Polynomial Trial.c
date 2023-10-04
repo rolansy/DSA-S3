@@ -66,3 +66,15 @@ void printpoly(struct poly p,int n){
     printf("\n");
 }
 
+//Sort Polynomials In Descending Order
+void sortpoly(struct poly p,int n){
+    for(int i=0;i<n-1,i++){
+        for(int j=0;i<n-i-j,j++){
+            if(p[j].e<p[j+1].e){
+                struct poly temp=p[j].e
+                p[j].e=p[j+1].e
+                p[j+1].e=temp;
+            }
+        }
+    }
+}
