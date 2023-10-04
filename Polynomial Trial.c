@@ -42,7 +42,7 @@ void readpoly(struct poly *p,int *n){
     for (int i; i<*n; i++){
         printf("Enter the Coefficient : ");
         scanf("%d",&p[i].c);
-        printf("Enter the Exponent : ");
+        printf("Enter the Exponent x^ : ");
         scanf("%d",&p[i].e);
     } 
 }
@@ -77,4 +77,36 @@ void sortpoly(struct poly *p,int n){
             }
         }
     }
+}
+
+
+// Add two polynomials and return the number of terms in the resultant polynomial
+int addpoly(struct poly *p1, struct poly *p2, struct poly *res, int n1, int n2)
+{
+    int i = 0, j = 0, k = 0;
+    while (i < n1 && j < n2)
+    {
+        if (p1[i].e > p2[j].e)
+        {
+            res[k++] = p1[i++];
+        }
+        else if (p1[i].e < p2[j].e)
+        {
+            res[k++] = p2[j++];
+        }
+        else
+        {
+            res[k].e = p1[i].e;
+            res[k++].c = p1[i++].c + p2[j++].c;
+        }
+    }
+    while (i < n1)
+    {
+        res[k++] = p1[i++];
+    }
+    while (j < n2)
+    {
+        res[k++] = p2[j++];
+    }
+    return k;
 }
