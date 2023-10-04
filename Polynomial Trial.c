@@ -34,3 +34,16 @@ void main(){
 
     
 }
+
+//read polynomials
+void readpoly(struct poly p,int n){
+    printf("Enter Number of Terms : ");
+    scanf("%d",&n);
+    for (int i; i<n; i++){
+        printf("Enter the Coefficient : ")
+        scanf("%d",&p[i].c)
+        printf("Enter the Exponent : ")
+        scanf("%d",&p[i].e)
+    } 
+}
+
