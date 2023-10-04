@@ -20,5 +20,11 @@ void main(){
     printf("Polynomial 2 : ");
     printpoly(p2,n2);
 
+    n3=add_poly(p1,p2,res,n1,n2);
+    printf("Resultant Polynomial : ");
+    printpoly(res,n3);
+
+    return 0;    
+
     
 }
