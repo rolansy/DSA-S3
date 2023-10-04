@@ -47,3 +47,22 @@ void readpoly(struct poly p,int n){
     } 
 }
 
+//print polynomials
+void printpoly(struct poly p,int n){
+    for (int i; i<n; i++){
+        if (p[i].c==0){
+            continue;
+        }
+        if (p[i]e==0]){
+            printf("%d",p[i].c)
+        }
+        else{
+            printf("%dx^%d",p[i].c,p[i].e);
+        }
+        if (i!=n-1){
+            printf("+");
+        }
+    }
+    printf("\n");
+}
+
