@@ -11,5 +11,9 @@ void main(){
     
     readpoly(p1, &n1);
     readpoly(p2, &n2);
+
+    sortpoly(p1, n1);
+    sortpoly(p2, n2);
+
     
 }
