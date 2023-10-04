@@ -15,5 +15,10 @@ void main(){
     sortpoly(p1, n1);
     sortpoly(p2, n2);
 
+    printf("Polynomial 1 : ");
+    printpoly(p1,n1);
+    printf("Polynomial 2 : ");
+    printpoly(p2,n2);
+
     
 }
