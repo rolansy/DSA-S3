@@ -38,8 +38,8 @@ int main(void){
 //read polynomials
 void readpoly(struct poly *p,int *n){
     printf("Enter Number of Terms : ");
-    scanf("%d",n);
-    for (int i; i<*n; i++){
+    scanf("%d",&n);
+    for (int i=0; i<n; i++){
         printf("Enter the Coefficient : ");
         scanf("%d",&p[i].c);
         printf("Enter the Exponent x^ : ");
@@ -49,7 +49,7 @@ void readpoly(struct poly *p,int *n){
 
 //print polynomials
 void printpoly(struct poly *p,int n){
-    for (int i; i<n; i++){
+    for (int i=0; i<n; i++){
         if (p[i].c==0){
             continue;
         }
@@ -69,7 +69,7 @@ void printpoly(struct poly *p,int n){
 //Sort Polynomials In Descending Order
 void sortpoly(struct poly *p,int n){
     for(int i=0;i<n-1;i++){
-        for(int j=0;i<n-i-j;j++){
+        for(int j=0;j<n-i-j;j++){
             if(p[j].e<p[j+1].e){
                 struct poly temp=p[j];
                 p[j]=p[j+1];
