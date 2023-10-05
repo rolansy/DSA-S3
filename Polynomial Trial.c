@@ -11,7 +11,7 @@ void sortpoly(struct poly *p,int n);
 void printpoly(struct poly *p,int n);
 int addpoly(struct poly *p1,struct poly *p2,struct poly *res,int n1,int n2);
 
-int main(void){
+/*int main(void){
     struct poly p1[10],p2[10],res[20];
     int n1, n2, n3;
     
@@ -33,7 +33,7 @@ int main(void){
     return 0;    
 
     
-}
+}*/
 
 //read polynomials
 void readpoly(struct poly *p,int *n){
@@ -111,11 +111,11 @@ int addpoly(struct poly *p1, struct poly *p2, struct poly *res, int n1, int n2)
     return k;
 }
 
-void main(){
+int main(){
     struct poly p[100],q[100],r[200];
-    int n;int m,int c,int k,int s=0;
+    int n;int m;int c;int k;int s=0;
     while (s==0){
-        printf("1. Input Polynomials\n2. Display polynomial 1\n3. Display Polynomial 2\n4. Display Resultant Polynomial\n5. Exit\n ")
+        printf("1. Input Polynomials\n2. Display polynomial 1\n3. Display Polynomial 2\n4. Display Resultant Polynomial\n5. Exit\n ");
         printf("Enter Choice");
         scanf("%d",&c);
         switch(c){
@@ -126,7 +126,8 @@ void main(){
             case(2):
                 printf("Polynomial 1 :");
                 sortpoly(p,n);
-                printpoly("\n");
+                printpoly(q,m);
+                printf("\n");
                 break;
             case(3):
                 printf("Polymial 2 :");
@@ -148,4 +149,5 @@ void main(){
 
         }
     }
+    return 0;
 }
