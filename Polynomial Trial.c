@@ -12,7 +12,7 @@ void printpoly(struct poly *p,int n);
 int addpoly(struct poly *p1,struct poly *p2,struct poly *res,int n1,int n2);
 
 int main(void){
-    struct poly p1[10],p2[10],res[10];
+    struct poly p1[10],p2[10],res[20];
     int n1, n2, n3;
     
     readpoly(p1, &n1);
@@ -38,12 +38,12 @@ int main(void){
 //read polynomials
 void readpoly(struct poly *p,int *n){
     printf("Enter Number of Terms : ");
-    scanf("%d",&n);
+    scanf("%d",n);
     for (int i=0; i<n; i++){
         printf("Enter the Coefficient : ");
-        scanf("%d",&p[i].c);
+        scanf("%d",p[i].c);
         printf("Enter the Exponent x^ : ");
-        scanf("%d",&p[i].e);
+        scanf("%d",p[i].e);
     } 
 }
 
@@ -59,8 +59,8 @@ void printpoly(struct poly *p,int n){
         else{
             printf("%dx^%d",p[i].c,p[i].e);
         }
-        if (i!=n-1){
-            printf("+");
+        if (i!=n-1){    
+            printf(" + ");
         }
     }
     printf("\n");
@@ -109,4 +109,43 @@ int addpoly(struct poly *p1, struct poly *p2, struct poly *res, int n1, int n2)
         res[k++] = p2[j++];
     }
     return k;
+}
+
+void main(){
+    struct poly p[100],q[100],r[200];
+    int n;int m,int c,int k,int s=0;
+    while (s==0){
+        printf("1. Input Polynomials\n2. Display polynomial 1\n3. Display Polynomial 2\n4. Display Resultant Polynomial\n5. Exit\n ")
+        printf("Enter Choice");
+        scanf("%d",&c);
+        switch(c){
+            case(1):
+                readpoly(p,&n);
+                readpoly(q,&m);
+                break;
+            case(2):
+                printf("Polynomial 1 :");
+                sortpoly(p,n);
+                printpoly("\n");
+                break;
+            case(3):
+                printf("Polymial 2 :");
+                sortpoly(q,m);
+                printpoly(q,m);
+                printf("\n");
+                break;
+            case(4):
+                sortpoly(p,n);
+                sortpoly(q,m);
+                k=addpoly(p,q,r,n,m);
+                printf("Resultant Polynomial : ");
+                printpoly(r,k);
+                printf("\n");
+                break;
+            case(5):
+                s=1;
+                break;
+
+        }
+    }
 }
