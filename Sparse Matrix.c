@@ -28,18 +28,42 @@ void main(){
 }
 
 void input(int r,int c,int matrix[r][c]){
-    for(int i=0;i<r,i++){
-        for(int j=0;j<c,j++){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
             scanf("%d",&matrix[i][j]);
         }
     }
 }
 
 void displaym(int r,int c,int matrix[r][c]){
-    for(int i=0;i<r,i++){
-        for(int j=0;j<c,j++){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
             printf("%d ",matrix[i][j]);
         }
-        printf("/n");
+        printf("\n");
+    }
+}
+
+void convert(int m[][100],int r,int c,int s[100][3]){
+    int k=1;
+    for(i=0;i<r;i++){
+        for(j=0;j<r;j++){
+            if(m[i][j]!=0){
+                s[k][0]=r;
+                s[k][1]=c;
+                s[k][2]=m[i][j];
+                k++;
+            }
+        }
+    }
+    s[0][0]=r;
+    s[0][1]=c;
+    s[0][2]=k-1;
+    printf("Tuple Matrix \n");
+    for(i=0;i<k;i++){
+        for(j=0;j<k;j++){
+            printf("%d ",m[i][j]);
+        }
+        printf("\n")
     }
 }
