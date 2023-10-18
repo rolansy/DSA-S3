@@ -9,9 +9,10 @@ void main(){
     printf("Enter Stack Size : ");
     scanf("%d",&n);
     while (a==0){
-        printf("1.Push\n2.Pull\n3.Display\n4.Exit");
-        printf("Enter Choice");
+        printf("1.Push\n2.Pull\n3.Display\n4.Exit\n");
+        printf("Enter Choice : ");
         scanf("%d",&c);
+        printf("\n");
         switch (c){
             case 1:
                 printf("Enter Element to be Pushed : ");
@@ -23,6 +24,13 @@ void main(){
                 pop(s);
                 display(s);
                 break;
+            case 3:
+                display(s);
+                break;
+            case 4:
+                a=1;
+                break;
+                
         }
     }
 }
