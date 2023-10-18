@@ -8,3 +8,11 @@ void push(int s[100];int x;int n){
         s[++top]=x;
     }
 }
+void pull(int s[100]){
+    if (n==-1){
+        printf("Stack is Empty\n");
+    }
+    else{
+        printf("Popped Element : %d\n",s[top--]);
+    }
+}
