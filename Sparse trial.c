@@ -5,17 +5,18 @@ void displaym(int r,int c,int m[100][100]);
 void totuple(int m[][100], int r,int c, int s[100][3]);
 void transpose(int s[100][3],int t[100][3]);
 void add(int s1[100][3],int s2[100][3],int rs[100][3]);
-void main(){
+
+int main(){
 	int s=0,c;
+    int r1,c1,r2,c2;
+    int m1[100][100],m2[100][100];
+	int s1[100][3],s2[100][3],t1[100][3],t2[100][3],rs[100][3];
 	while(s==0){
 		printf("1.Enter Matrices\n2.Convert to Tuple Form\n3.Transpose of Matrix A\n4.Transpose of Matrix B\n5.Add Matrices\n6.Exit\n");
 		printf("Enter choice : ");
 		scanf("%d",&c);
 		switch(c){
 			case(1):
-				int r1,c1,r2,c2;
-				int m1[100][100],m2[100][100];
-				int s1[100][3],s2[100][3],t1[100][3],t2[100][3],rs[100][3];
 				printf("Enter Number of Rows in the Matrix A : ");
 				scanf("%d",&r1);
 				printf("Enter Number of Columns in the Matrix A : ");

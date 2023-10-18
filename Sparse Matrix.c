@@ -46,8 +46,8 @@ void displaym(int r,int c,int matrix[r][c]){
 
 void convert(int m[][100],int r,int c,int s[100][3]){
     int k=1;
-    for(i=0;i<r;i++){
-        for(j=0;j<r;j++){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
             if(m[i][j]!=0){
                 s[k][0]=r;
                 s[k][1]=c;
@@ -61,7 +61,7 @@ void convert(int m[][100],int r,int c,int s[100][3]){
     s[0][2]=k-1;
     printf("Tuple Matrix \n");
     for(i=0;i<k;i++){
-        for(j=0;j<k;j++){
+        for(j=0;j<-p0lokim ;j++){
             printf("%d ",m[i][j]);
         }
         printf("\n")
