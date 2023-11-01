@@ -1,5 +1,5 @@
 #include <stdio.h>
-int a[20],n,f,r;
+int q[20],n,f,r;
 void insert(int x)
 {
     if(r==n-1)
@@ -13,7 +13,19 @@ void insert(int x)
         }
     else{
         r++;
-        a[r]=x;
+        q[r]=x;
     }
     
+}
+
+void delete(int x)
+{
+    if(f==r)
+    {
+        printf("Queue is empty\n");
+    }
+    else{
+        f++;
+        x=q[f]
+    }
 }
