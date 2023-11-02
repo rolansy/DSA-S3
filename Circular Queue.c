@@ -32,3 +32,23 @@ void delete(int x){
         f=(f+1)%n;
     }
 }
+
+void display(){
+    int i;
+    if (f==-1)
+    {
+        printf("Queue is empty\n");
+    }
+    else if (f<=r){
+        for(i=f;i<=r;i++){
+            printf("%d",q[i]);
+        }
+    else{
+        for(i=f;i<n;i++){
+            printf("%d",q[i]);
+        }
+        for (i=0;i<=r;i++){
+            printf("%d",q[i]);
+        }
+    }
+}
