@@ -2,9 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <math.h>
 
 void post(char inf[100],char postf[100]);
 int val(char c);
+void calc(char postf[100]);
 void main(){
 	char inf[100];
 	char postf[100];
@@ -13,6 +15,7 @@ void main(){
 	scanf("%s", inf);
 	post(inf, postf);
     	printf("\nPostfix expression: %s\n", postf);
+    	calc(postf);
 }
 
 void post(char inf[100],char postf[100]){
@@ -86,5 +89,48 @@ int val(char c){
 	
 	
 }
-
+void calc(char postf[100]){
+	char cal[100];
+	int n = (int)strlen(postf);
+	int noprnd=0;
+	for(int i=0;i<n;i++){
+		if ( isalpha(postf[i])){
+			noprnd++;
+		}
+	}
+	printf("%d",noprnd);
+	int j=0;
+	int oprnd[noprnd];
+	for(int i=0;i<n;i++){
+		if( isalpha(postf[i])){
+		printf("Enter Value of %c : ",postf[i]);
+		scanf("%d",&oprnd[j]);
+		j++;
+		}
+	}
+	int k=-1;
+	int top=-1;
+	int res[noprnd];
+	for(int i=0;i<n;i++){
+		if(isalpha(postf[i])){
+			res[++top]=oprnd[++k];
+		}
+		else{
+			int a,b,r;
+			a=res[top];
+			b=res[top-1];
+			switch(postf[i]){
+				case '+':r=b+a;break;
+				case '-':r=b-a;break;
+				case '/':r=b/a;break;
+				case '*':r=b*a;break;
+				case '^':r=pow(b,a);break;
+			}
+			
+			res[--top]=r;
+			
+		}
+	}
+	printf("\n Result of the Expression is %d ",res[0]);
+}
 
