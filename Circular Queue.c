@@ -52,3 +52,29 @@ void display(){
         }
     }
 }
+
+void main (){
+    int ch,x;
+    printf("Enter the size of the queue\n");
+    scanf("%d",&n);
+    f=-1;
+    r=-1;
+    while(1){
+        printf("Enter your choice\n");
+        printf("1.Insert\n2.Delete\n3.Display\n4.Exit\n");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1:printf("Enter the element to be inserted\n");
+                    scanf("%d",&x);
+                    insert(x);
+                    break;
+            case 2:delete(x);
+                    break;
+            case 3:display();
+                    break;
+            case 4:exit(0);
+                    break;
+            default:printf("Invalid choice\n");
+        }
+    }
+}
