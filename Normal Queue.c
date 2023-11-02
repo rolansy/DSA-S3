@@ -29,3 +29,13 @@ void delete(int x)
         x=q[f]
     }
 }
+
+void display()
+{
+    int i;
+    for(i=f;i<=r;i++)
+    {
+        printf("%d",q[i]);
+    }
+}
+
