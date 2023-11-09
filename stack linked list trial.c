@@ -41,3 +41,25 @@ void pop(){
         display();
     }
 }
+
+void main(){
+    int opt,item;
+    do{
+        printf("\n\n1.Push\n2.Pop\n3.Display\n4.Exit\n");
+        printf("Enter your choice\n");
+        scanf("%d",&opt);
+        switch(opt){
+            case 1:printf("Enter the element to be inserted\n");
+                    scanf("%d",&item);
+                    push(item);
+                    break;
+            case 2:pop();
+                    break;
+            case 3:display();
+                    break;
+            case 4:exit(0);
+                    break;
+            default:printf("Invalid choice\n");
+        }
+    }
+}
