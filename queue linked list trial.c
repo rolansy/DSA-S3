@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 struct node{
     int data;
     struct node *link;
@@ -13,7 +16,7 @@ void display(){
     else{
         ptr=front;
         printf("Queue elements are :");
-        while(ptr!=NUll){
+        while(ptr!=NULL){
             printf("%d ",ptr->data);
             ptr=ptr->link;
         }
@@ -24,7 +27,7 @@ void enq(int item){
     struct node *new;
     new=(struct node *)malloc(sizeof(struct node));
     new->data=item;
-    new-link=NULL;
+    new->link=NULL;
     if (front==NULL){
         front=rear=new;
     }
@@ -43,7 +46,7 @@ void deq(){
     }
     else if(front==rear){
         temp=front;
-        front=rear=null;
+        front=rear=NULL;
         free(temp);
         display();
     }
@@ -64,7 +67,7 @@ void main(){
         switch(opt){
             case 1:printf("Enter the element to be inserted\n");
                     scanf("%d",&x);
-                    enq(item);
+                    enq(x);
                     break;
             case 2:deq();
                     break;
