@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 struct node{
     int data;
     struct node *link;
@@ -30,6 +33,7 @@ void push(int item){
 }
 
 void pop(){
+    struct node *temp;
     temp=top;
     if(top==NULL){
         printf("Stack is Empty\n");
@@ -61,5 +65,6 @@ void main(){
                     break;
             default:printf("Invalid choice\n");
         }
-    }
+    }while(1);
+    return 0;
 }
