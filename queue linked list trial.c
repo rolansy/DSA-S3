@@ -20,3 +20,22 @@ void enq(int item){
     display();
 
 }
+
+void deq(){
+    struct node *temp;
+    if(front==NULL){
+        printf("Queue is Empty");
+    }
+    else if(front==rear){
+        temp=front;
+        front=rear=null;
+        free(temp);
+        display();
+    }
+    else{
+        temp=front;
+        front=front->link;
+        free(temp);
+        display();
+    }
+}
