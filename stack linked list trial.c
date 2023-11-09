@@ -28,3 +28,16 @@ void push(int item){
     top=new;
     display();
 }
+
+void pop(){
+    temp=top;
+    if(top==NULL){
+        printf("Stack is Empty\n");
+    }
+    else{
+        printf("Popped element is %d\n",top->data);
+        top=top->link;
+        free(temp);
+        display();
+    }
+}
