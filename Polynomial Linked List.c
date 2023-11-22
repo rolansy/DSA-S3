@@ -4,7 +4,7 @@
 struct node{
     int co,expo;
     struct node *link;
-}
+};
 
 struct node *p1,*p2,*pr;
 
@@ -18,12 +18,12 @@ struct node * readpoly(){
     printf("Enter the Coefficient and Exponent of Each Term\n");
     for (i=0;i<n;i++){
         new=(struct node *)malloc(sizeof(struct node));
-        scanf("%d%d",&new->co);
+        scanf("%d",&new->co);
         scanf("%d",&new->expo);
         new->link=NULL;
         if(head==NULL){
             head=new;
-            ptr=head
+            ptr=head;
         }
         else{
             ptr->link=new;
@@ -31,7 +31,6 @@ struct node * readpoly(){
             }
         }
     return head;
-    }
 }
 
 void display (struct node * head){
@@ -41,18 +40,18 @@ void display (struct node * head){
     }
     else{
         ptr=head;
-        while(ptr!=NULL){
+        while(ptr->link!=NULL){
             printf("%dx^%d + ",ptr->co,ptr->expo);
             ptr=ptr->link;
         }
-        printf("%dx^%d + ",ptr->co,ptr->expo);
+        printf("%dx^%d",ptr->co,ptr->expo);
     }
 }
 
 struct node * addpoly(){
     struct node *new,*p,*q,*r,*head=NULL;
     p=p1;
-    q=q1;
+    q=p2;
     while(p!=NULL && q!=NULL){
         if(p->expo==q->expo){
             new=(struct node *)malloc(sizeof(struct node));
@@ -116,4 +115,19 @@ struct node * addpoly(){
         q=q->link;
     }
     return head;
+}
+
+void main(){
+    printf("Enter the First Polynomial\n");
+    p1=readpoly();
+    printf("Enter the Second Polynomial\n");
+    p2=readpoly();
+    printf("First Polynomial is : \n");
+    display(p1);
+    printf("Second Polynomial is\n");
+    display(p2);
+    pr=addpoly();
+    printf("Resultant Polynomial is\n");
+    display(pr);
+
 }
