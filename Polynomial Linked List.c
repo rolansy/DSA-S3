@@ -33,3 +33,18 @@ struct node * readpoly(){
     return head;
     }
 }
+
+void display (struct node * head){
+    struct node *ptr;
+    if(head==NULL){
+        printf("Polynomial is Empty\n");
+    }
+    else{
+        ptr=head;
+        while(ptr!=NULL){
+            printf("%dx^%d + ",ptr->co,ptr->expo);
+            ptr=ptr->link;
+        }
+        printf("%dx^%d + ",ptr->co,ptr->expo);
+    }
+}
