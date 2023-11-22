@@ -48,3 +48,72 @@ void display (struct node * head){
         printf("%dx^%d + ",ptr->co,ptr->expo);
     }
 }
+
+struct node * addpoly(){
+    struct node *new,*p,*q,*r,*head=NULL;
+    p=p1;
+    q=q1;
+    while(p!=NULL && q!=NULL){
+        if(p->expo==q->expo){
+            new=(struct node *)malloc(sizeof(struct node));
+            new->co=p->co+q->co;
+            new->expo=p->expo;
+            new->link=NULL;
+            p=p->link;
+            q=q->link;
+        }
+        else if(p->expo>q->expo){
+            new=(struct node *)malloc(sizeof(struct node));
+            new->co=p->co;
+            new->expo=p->expo;
+            new->link=NULL;
+            p=p->link;
+        }
+        else{
+            new=(struct node *)malloc(sizeof(struct node));
+            new->co=q->co;
+            new->expo=q->expo;
+            new->link=NULL;
+            q=q->link;
+        }
+        if (head==NULL){
+            head=new;
+            r=head;
+        }
+        else{
+            r->link=new;
+            r=new;
+        }
+    }
+    while(p!=NULL){
+        new=(struct node *)malloc(sizeof(struct node));
+        new->co=p->co;
+        new->expo=p->expo;
+        new->link=NULL;
+        if(head==NULL){
+            head=new;
+            r=head;
+        }
+        else{
+            r->link=new;
+            r=new;
+        }
+        p=p->link;
+    }
+    while(q!=NULL){
+        new=(struct node *)malloc(sizeof(struct node));
+        new->co=q->co;
+        new->expo=q->expo;
+        new->link=NULL;
+        if(head==NULL){
+            head=new;
+            r=head;
+        }
+        else{
+            r->link=new;
+            r=new;
+        }
+        q=q->link;
+    }
+    return head;
+}
