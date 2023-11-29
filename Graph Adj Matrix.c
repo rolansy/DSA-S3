@@ -13,3 +13,15 @@ void DFS(int i){
         }
     }
 }
+
+void enqueue(int item){
+    if(f==-1 && r==-1){
+        f=r=0;
+        Q[r]=item;
+    }
+    else{
+        r++;
+        q[r]=item;
+    }
+}
+
