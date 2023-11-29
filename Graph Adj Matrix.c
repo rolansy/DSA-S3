@@ -60,3 +60,45 @@ void BFS(int s){
         }
     }
 }
+
+void main(){
+    int i,j,v1,v2,opt;
+    printf("\t\t\tGraphs\n");
+    printf("Enter the number of vertices: \n");
+    scanf("%d",&V);
+    for(i=1;i<=V;i++){
+        for(j=1;j<=V;j++){
+            G[i][j]=0;
+        }
+    }
+
+    printf("Enter the number of edges: \n");
+    scanf("%d",&E);
+    for(i=1;i<=E;i++){
+        printf("Enter the edges (format: V1 V2) : \n");
+        scanf("%d%d",&v1,&v2);
+        G[v1][v2]=1;
+        G[v2][v1]=1;
+    }
+    printf("The adjacency matrix is: \n");
+    for(i=1;i<=V;i++){
+        for(j=1;j<=V;j++){
+            printf("%d\t",G[i][j]);
+        }
+        printf("\n");
+    }
+    for (i=1;i<=V;i++){
+        visited[i]=0;
+    }
+    printf("Enter the source: \n");
+    scanf("%d",&source);
+    printf("DFS Traversal is: \n");
+    DFS(source);
+    printf("\n");
+    for(i=1;i<=V;i++){
+        visited[i]=0;
+    }
+    printf("BFS Traversal is: \n");
+    BFS(source);
+    printf("\n");
+}
