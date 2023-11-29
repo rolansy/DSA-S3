@@ -21,7 +21,7 @@ void enqueue(int item){
     }
     else{
         r++;
-        q[r]=item;
+        Q[r]=item;
     }
 }
 
