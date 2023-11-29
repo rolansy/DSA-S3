@@ -42,3 +42,21 @@ int dequeue(){
         return item;
     }
 }
+
+void BFS(int s){
+    int i;
+    visited[s]=1;
+    printf("%d->",s);
+    enqueue(s);
+
+    while(f!=-1){
+        s=dequeue();
+        for(i=1;i<=V;i++){
+            if(G[s][i]==1 && visited[i]==0){
+                printf("%d->",i);
+                visited[i]=1;
+                enqueue(i);
+            }
+        }
+    }
+}
