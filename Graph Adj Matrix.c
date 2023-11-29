@@ -25,3 +25,20 @@ void enqueue(int item){
     }
 }
 
+int dequeue(){
+    int item;
+    if(f==-1 && r==-1){
+        printf("Queue is empty\n");
+        return -1;
+    }
+    else if(f==r){
+        item=Q[f];
+        f=r=-1;
+        return item;
+    }
+    else{
+        item=Q[f];
+        f++;
+        return item;
+    }
+}
